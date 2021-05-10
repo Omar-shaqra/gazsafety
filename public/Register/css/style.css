@@ -1,0 +1,194 @@
+/*start main rules*/
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: Century Gothic;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+.container {
+	width: 70%;
+	margin: auto;
+}
+/*end main rules*/
+
+/*start header*/
+.header .navbar {
+	background-color: #252F31;
+	color: #fff;
+	overflow: hidden;
+	text-transform: uppercase;
+}
+
+.header .navbar .container {
+	width: 90%;
+}
+
+.header .navbar .container a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.header .navbar img {
+	width: 70px;
+	height: 70px;
+	float: left;
+	padding-bottom: 5px;
+}
+
+.header .navbar h2 {
+	float: left;
+	padding-top: 10px;
+	margin-top: 15px;
+}
+
+.header .navbar h2 span {
+	color: #06a5b8;
+}
+
+.header .navbar ul {
+	list-style: none;
+	padding-left: 0;
+	padding-top: 10px;
+	overflow: hidden;
+	float: right;
+}
+
+.header .navbar ul li {
+	float: left;
+	padding: 10px;
+	margin-top: 15px;
+}
+
+.header .navbar ul li a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.header .navbar ul li.active a,
+.header .navbar ul li a:hover {
+	color: #06a5b8;
+}
+/*end header*/
+/*Start main*/
+.title {
+	margin-top: 100px;
+	color: teal;
+}
+
+.title h1 {
+	font-size: 50px;
+	line-height: 10px;
+	color: teal;
+}
+
+.title h2 {
+	font-size: 23px;
+}
+
+form p {
+	color: crimson;
+}
+
+form {
+	margin-top: 50px;
+}
+
+.form-control {
+	width: 500px;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid teal;
+	color: black;
+	font-size: 18px;
+	margin-bottom: 16px;
+	border-radius: 20px;
+	box-shadow: 0 0 30px cadetblue;
+	color: teal;
+	font-weight: bold;
+}
+
+input {
+	height: 45px;
+}
+
+#sub {
+	background-color: teal;
+	border: none;
+	border-radius: 15px;
+	padding: 10px;
+	margin-top: 8px;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	width: 200px;
+	height: :50px;
+}
+
+#sub:hover {
+	background-color: turquoise;
+}
+/*End main*/
+/*Start footer*/
+footer {
+	margin-top: 200px;
+	height: 250px;
+	background-color: gainsboro;
+}
+footer:hover {background-color:#252F31;}
+footer table tr a:hover {
+	color: white;
+}
+
+td {
+	width: 600px;
+	text-align: center;
+}
+
+p {
+	margin-top: 15px;
+	color: darkslategray;
+	font-family: serif;
+	font-size: 20px;
+}
+
+h1 {
+	color: #4877CA;
+}
+
+a {
+	text-decoration: none;
+	color: #06a5b8;
+}
+
+.head h1 {
+	font-family: French Script MT;
+	font-size: 70px;
+	text-transform: capitalize;
+	color: white;
+	font-weight: bold;
+}
+
+.head h1 span {
+	color: #06a5b8;
+	font-family: French Script MT;
+}
+
+.contact img {
+	width: 42px;
+	height: 42px;
+	border: 0;
+	text-align: center;
+}
+
+.about {
+	padding-top: 20px;
+}
+/*End footer*/
