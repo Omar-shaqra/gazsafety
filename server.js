@@ -8,6 +8,9 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine','ejs');
 app.use(bodyparser.urlencoded({extended:true}));
 
+const http = require('http');
+const port = process.env.PORT || 3000;
+
 /*const mysql=require("mysql");
 const db = mysql.createConnection({
   host     : 'localhost',
@@ -16,8 +19,8 @@ const db = mysql.createConnection({
   database : 'hotelscontrolsystem'
 });
 */
-app.listen(3308,function(){
-console.log("stat server on 3308");
+app.listen(port,function(){
+console.log(`Server running at port `+port);
 
 });
 /*
