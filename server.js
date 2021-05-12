@@ -33,6 +33,6 @@ db.connect((err) => {
 })
 */
 app.get("/",function(req,res){
-  res.render("Home.html");
+  res.render("Home");
 
 });
