@@ -26,7 +26,7 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected!!!!');
 });
 */
-/*
+
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -36,7 +36,7 @@ client.connect(err => {
   console.log(err);
   client.close();
 });
-*/
+
 app.get("/",function(req,res){
   res.render("Home");
 
