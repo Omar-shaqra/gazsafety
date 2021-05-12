@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyparser=require("body-parser");
 const app=express();
+const mongoose = require('mongoose');
 
 app.use(express.static(__dirname + '/public'));
 app.engine('html', require('ejs').renderFile);
@@ -16,7 +17,7 @@ console.log(`Server running at port `+port);
 
 });
 /*
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/test', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
