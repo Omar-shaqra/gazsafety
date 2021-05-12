@@ -17,7 +17,7 @@ console.log(`Server running at port `+port);
 });
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://mohamed:gamal@cluster0-puljc.mongodb.net/gazsafety";
+const uri = "mongodb+srv://shaqra:<password>@cluster0.osy09.mongodb.net/test";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
