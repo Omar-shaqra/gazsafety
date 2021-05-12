@@ -16,7 +16,7 @@ app.listen(port,function(){
 console.log(`Server running at port `+port);
 
 });
-/*
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/test', {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://shaqra:shaqra1299@clu
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected!!!!');
 });
-*/
+/*
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/test";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -35,7 +35,7 @@ client.connect(err => {
   console.log(err);
   client.close();
 });
-
+*/
 app.get("/",function(req,res){
   res.render("Home");
 
