@@ -10,28 +10,22 @@ app.use(bodyparser.urlencoded({extended:true}));
 
 const http = require('http');
 const port = process.env.PORT || 3000;
-/*
-const mysql=require("mysql");
-const db = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'gazsafety'
-});
-*/
+
 app.listen(port,function(){
 console.log(`Server running at port `+port);
 
 });
-/*
-db.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log('mysql connected...');
 
-})
-*/
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://mohamed:gamal@cluster0-puljc.mongodb.net/gazsafety";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  console.log(err);
+  client.close();
+});
+
 app.get("/",function(req,res){
   res.render("Home");
 
