@@ -17,7 +17,7 @@ console.log(`Server running at port `+port);
 
 });
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/test', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
