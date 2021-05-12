@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyparser=require("body-parser");
 const app=express();
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 app.use(express.static(__dirname + '/public'));
 app.engine('html', require('ejs').renderFile);
