@@ -20,7 +20,7 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shaqra:<password>@cluster0.osy09.mongodb.net/test";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
-  const collection = client.db("test").collection("devices");
+  const collection = client.db("test").collection("test");
   // perform actions on the collection object
   console.log(err);
   client.close();
