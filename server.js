@@ -11,19 +11,19 @@ app.use(bodyparser.urlencoded({extended:true}));
 const http = require('http');
 const port = process.env.PORT || 3000;
 
-/*const mysql=require("mysql");
+const mysql=require("mysql");
 const db = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
-  database : 'hotelscontrolsystem'
+  database : 'gazsafety'
 });
-*/
+
 app.listen(port,function(){
 console.log(`Server running at port `+port);
 
 });
-/*
+
 db.connect((err) => {
   if (err) {
     throw err;
@@ -31,7 +31,7 @@ db.connect((err) => {
   console.log('mysql connected...');
 
 })
-*/
+
 app.get("/",function(req,res){
   res.render("Home");
 
