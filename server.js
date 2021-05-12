@@ -15,9 +15,18 @@ app.listen(port,function(){
 console.log(`Server running at port `+port);
 
 });
+/*
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose is connected!!!!');
+});
+*/
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://shaqra:<password>@cluster0.osy09.mongodb.net/test";
+const uri = "mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/test";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("test");
