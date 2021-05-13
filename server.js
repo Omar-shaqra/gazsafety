@@ -35,7 +35,7 @@ client.connect(err => {
   // perform actions on the collection object
   console.log(err);
   client.close();
-
+});
 
 app.get("/",function(req,res){
   res.render("Home");
