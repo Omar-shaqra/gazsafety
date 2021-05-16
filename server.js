@@ -52,29 +52,78 @@ collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }], function(err, result) {
 };
 
 
-/*
-const mysql=require("mysql");
-const db = mysql.createConnection({
-  host     : 'bxgpomtmr8n6sufxh7sn-mysql.services.clever-cloud.com',
-  user     : 'ujhbjrtc2tu7usks',
-  password : 'ujhbjrtc2tu7usks',
-  database : 'bxgpomtmr8n6sufxh7sn'
+var nodemailer = require('nodemailer');
+//let transporter = nodemailer.createTransport(options[, defaults])
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'omarshaqra26@gmail.com',
+    pass: 'shaqra123456'
+  }
 });
-*/
+
+
 app.listen(port,function(){
 console.log(`Server running at port `+port);
 
 });
-/*
-db.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log('mysql connected...');
 
-})
-*/
 app.get("/",function(req,res){
   res.render("Home");
+
+});
+
+
+app.post("/",function(req,res){
+
+var  from = req.body.email;
+var  name = req.body.name;
+var    message = req.body.message;
+
+const output = `
+  <p>You have a new contact request</p>
+  <h3>Contact Details</h3>
+  <ul>
+    <li>Name: ${req.body.name}</li>
+
+    <li>Email: ${req.body.email}</li>
+
+  </ul>
+  <h3>Message</h3>
+  <p>${req.body.message}</p>
+`;
+
+
+
+var mailOptions = {
+  from: '' ,
+  to: 'omarshaqra26@gmail.com',
+  subject: "test example",
+  html: output
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
+var mailOptions2 = {
+  from: 'omarshaqra26@gmail.com' ,
+  to: from,
+  subject: "test example6",
+  text: 'thank you for contact us'
+};
+
+transporter.sendMail(mailOptions2, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+  res.redirect("/");
 
 });
