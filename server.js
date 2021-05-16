@@ -57,7 +57,7 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
 //  host: 'https://gazsafety.herokuapp.com',
   // port: 3000,
-   secure: false, // true for 465, false for other ports
+//   secure: false, // true for 465, false for other ports
   service: 'gmail',
   auth: {
      type: 'OAuth2',
