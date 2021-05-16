@@ -55,22 +55,18 @@ collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }], function(err, result) {
 var nodemailer = require('nodemailer');
 //let transporter = nodemailer.createTransport(options[, defaults])
 var transporter = nodemailer.createTransport({
-//  host: 'https://gazsafety.herokuapp.com',
-  // port: 3000,
-//   secure: false, // true for 465, false for other ports
-host: 'smtp.gmail.com',
-   port: 465,
-   secure: true,
+  host: 'https://gazsafety.herokuapp.com',
+   port: 3000,
+   secure: false, // true for 465, false for other ports
   service: 'gmail',
   auth: {
      type: 'OAuth2',
     user: 'omarshaqra26@gmail.com',
-    accessToken: 'ya29.Xx_XX0xxxxx-xX0X0XxXXxXxXXXxX0x'
-//    pass: 'shaqra123456'
+    pass: 'shaqra123456'
   },
-  /*  tls:{
+   tls:{
       rejectUnauthorized:false
-    }*/
+    }
 });
 
 
