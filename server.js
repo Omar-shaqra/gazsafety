@@ -55,12 +55,19 @@ collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }], function(err, result) {
 var nodemailer = require('nodemailer');
 //let transporter = nodemailer.createTransport(options[, defaults])
 var transporter = nodemailer.createTransport({
+  host: 'https://gazsafety.herokuapp.com',
+   port: 3000,
+   secure: false, // true for 465, false for other ports
   service: 'gmail',
   auth: {
     user: 'omarshaqra26@gmail.com',
     pass: 'shaqra123456'
-  }
+  },
+    tls:{
+      rejectUnauthorized:false
+    }
 });
+
 
 
 app.listen(port,function(){
