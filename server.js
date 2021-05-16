@@ -62,6 +62,7 @@ var transporter = nodemailer.createTransport({
   auth: {
      type: 'OAuth2',
     user: 'omarshaqra26@gmail.com',
+    accessToken: 'ya29.Xx_XX0xxxxx-xX0X0XxXXxXxXXXxX0x'
 //    pass: 'shaqra123456'
   },
   /*  tls:{
