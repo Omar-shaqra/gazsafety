@@ -131,4 +131,8 @@ body{
     border-radius: 50px; 
     width: 100%; 
 }
+.scontainer .box .row a#forgetpass{
+	color: #d9534f;
+	text-decoration: underline;
+}
 /*End sign in*/
