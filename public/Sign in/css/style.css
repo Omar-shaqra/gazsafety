@@ -66,14 +66,14 @@
 body{
     background: #fff;
 }
-.sicontainer{
+.scontainer{
     position: relative;
     width: 100%;   min-height: 100vh;
     background: url(https://mk0geketeyorgkvhgr38.kinstacdn.com/wp-content/uploads/2015/12/city-road-street-buildings-1024x673.jpg);
     /* background-size: 100% 100%; */
     background-size: cover;
 }
-.sicontainer::before{
+.scontainer::before{
     content: '';
     position: absolute;
     top: 0;  left: 0;
@@ -81,7 +81,7 @@ body{
     width: 100%;  height: 100%;
     mix-blend-mode: hard-light;
 }
-.sicontainer .box{
+.scontainer .box{
     position: absolute;
     top: 50%;  left: 50%;
     transform: translate(-50%,-50%);
@@ -91,20 +91,20 @@ body{
     box-sizing: border-box;
     transition: .9s;
 }
-/* .sicontainer .box:hover{
+/* .scontainer .box:hover{
     background: rgba(255,255,255,.2);
 } */
-.sicontainer .box h1{
+.scontainer .box h1{
     font-size: 40px;
     text-align: center;  
     text-transform: uppercase;
 }
-.sicontainer .box .row{
+.scontainer .box .row{
     width: 100%;
     margin: 25px 0;
     text-align: center;
 }
-.sicontainer .box .row input{
+.scontainer .box .row input{
     border: none;   outline: none;
     width: 100%;
     padding: 13px 25px;
@@ -117,7 +117,7 @@ body{
     color: #bbb;
 /*     text-transform: uppercase; */
 }
-.sicontainer .box .row a{
+.scontainer .box .row a{
     display: inline-block;
     padding: 10px 0;
     color: #fff;
@@ -125,7 +125,7 @@ body{
     text-decoration: none;  text-transform: uppercase; 
     font-size: 18px;
 }
-.sicontainer .box .row a#login{
+.scontainer .box .row a#login{
     background: #00bcd4;
     padding: 15px 0;
     border-radius: 50px; 
