@@ -130,7 +130,7 @@ app.get("/Register",function(req,res){
 
   res.render("register");
 });
-
+/*
 app.post("/Register",function(req,res){
 
 
@@ -143,5 +143,6 @@ app.post("/Register",function(req,res){
       });
   user.save();
 
-  res.redirect("register");
+  res.redirect("/Register");
 });
+*/
