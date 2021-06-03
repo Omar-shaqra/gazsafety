@@ -13,16 +13,19 @@ const port = process.env.PORT || 3000;
 
 
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-const uri = "mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/gazsafety?retryWrites=true&w=majority";
-const dbname ='gazsafety';
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
-client.connect(err => {
-  assert.equal(null, err);
-  console.log("connected successfully to mongo");
-  const db = client.db(dbname)
+mongoose.connect("mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/user?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log("connected");
+});
+
+
   // perform actions on the collection object
 
 /*  collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }], function(err, result) {
