@@ -28,15 +28,18 @@ db.once('open', function() {
 });
 
 
-  // perform actions on the collection object
 
-/*  collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }], function(err, result) {
+const clientSchema = new mongoose.Schema({
+  name:String,
+  email:String,
+  phone:String,
+  address:String,
+  password:String,
+  location:String,
+  paymentmethod:String
+})
 
-    console.log('Inserted 3 documents into the collection');
-
-  });
-*/
-
+const Client = mongoose.model("Client",clientSchemasSchema);
 
 
 var nodemailer = require('nodemailer');
@@ -124,7 +127,21 @@ transporter.sendMail(mailOptions2, function(error, info){
 
 
 app.get("/Register",function(req,res){
-  
+
+  res.render("register");
+});
+
+app.post("/Register",function(req,res){
+
+
+      const client = new Client({
+         name : req.body.name;
+         email : req.body.email;
+         phone : req.body.phone;
+         address : req.body.address;
+         password : req.body.password;
+      });
+  user.save();
 
   res.render("register");
 });
