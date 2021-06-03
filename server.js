@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 
 
-mongoose.connect("mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/gazsafety?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/gazsafety2?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 const db = mongoose.connection;
