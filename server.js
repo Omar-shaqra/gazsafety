@@ -141,7 +141,7 @@ app.post("/Register",function(req,res){
          address : req.body.address;
          password : req.body.password;
       });
-      client.save();
+  //    client.save();
 
   res.redirect("/Register");
 });
