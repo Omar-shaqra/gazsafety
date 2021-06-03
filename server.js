@@ -131,17 +131,21 @@ app.get("/Register",function(req,res){
   res.render("register");
 });
 
-app.post("/Register",async function(req,res){
+try {
+  app.post("/Register",async function(req,res){
 
 
-      const client = new Client({
-         name : req.body.name,
-         email : req.body.email,
-         phone : req.body.phone,
-         address : req.body.address,
-         password : req.body.password
-      });
-  await  client.save();
+        const client = new Client({
+           name : req.body.name,
+           email : req.body.email,
+           phone : req.body.phone,
+           address : req.body.address,
+           password : req.body.password
+        });
+    await  client.save();
 
-  res.redirect("/Register");
-});
+    res.redirect("/Register");
+  });
+} catch (e) {
+  console.log(e);
+}
