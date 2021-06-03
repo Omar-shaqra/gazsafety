@@ -124,6 +124,7 @@ transporter.sendMail(mailOptions2, function(error, info){
 
 
 app.get("/Register",function(req,res){
+  
 
   res.render("register");
 });
