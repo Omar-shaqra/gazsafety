@@ -135,13 +135,13 @@ app.post("/Register",function(req,res){
 
 
       const client = new Client({
-         name : req.body.name;
-         email : req.body.email;
-         phone : req.body.phone;
-         address : req.body.address;
-         password : req.body.password;
+         name : req.body.name,
+         email : req.body.email,
+         phone : req.body.phone,
+         address : req.body.address,
+         password : req.body.password
       });
-  //    client.save();
+      client.save();
 
   res.redirect("/Register");
 });
