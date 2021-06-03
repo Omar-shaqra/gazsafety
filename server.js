@@ -131,7 +131,7 @@ app.get("/Register",function(req,res){
   res.render("register");
 });
 
-app.post("/Register",async(req,res){
+app.post("/Register",async function(req,res){
 
 
       const client = new Client({
