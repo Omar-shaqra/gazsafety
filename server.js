@@ -131,7 +131,7 @@ app.get("/Register",function(req,res){
   res.render("register");
 });
 
-app.post("/Register",function(req,res){
+app.post("/Register",async(req,res){
 
 
       const client = new Client({
@@ -141,7 +141,7 @@ app.post("/Register",function(req,res){
          address : req.body.address,
          password : req.body.password
       });
-      client.save();
+  await  client.save();
 
   res.redirect("/Register");
 });
