@@ -35,8 +35,8 @@ const clientSchema = new mongoose.Schema({
   phone:String,
   address:String,
   password:String,
-  location:String,
-  paymentmethod:String
+  location:{ type: String, required: false },
+  paymentmethod:{ type: String, required: false }
 })
 
 const Client = mongoose.model("Clients",clientSchema);
