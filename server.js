@@ -134,14 +134,14 @@ app.get("/Register",function(req,res){
 app.post("/Register",function(req,res){
 
 
-  /*    const client = new Client({
+      const client = new Client({
          name : req.body.name;
          email : req.body.email;
          phone : req.body.phone;
          address : req.body.address;
          password : req.body.password;
       });
-  user.save();
-*/
+      client.save();
+
   res.redirect("/Register");
 });
