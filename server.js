@@ -39,7 +39,7 @@ const clientSchema = new mongoose.Schema({
   paymentmethod:{ type: String, required: false }
 })
 
-const Client = mongoose.model("Clients",clientSchema);
+const Client = mongoose.model("Client",clientSchema);
 
 
 var nodemailer = require('nodemailer');
