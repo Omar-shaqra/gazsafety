@@ -12,7 +12,9 @@ const http = require('http');
 const port = process.env.PORT || 3000;
 
 
-const MongoClient = require('mongodb').MongoClient;
+
+
+const mongoose = require('mongoose');
 
 
 mongoose.connect("mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/user?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
