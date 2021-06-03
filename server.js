@@ -121,3 +121,9 @@ transporter.sendMail(mailOptions2, function(error, info){
   res.redirect("/");
 
 });
+
+
+app.get("Register/register.html",function(req,res){
+
+  res.render("register");
+});
