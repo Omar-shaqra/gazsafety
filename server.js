@@ -37,14 +37,6 @@ db.once('open', function() {
   });
 */
 
-  console.log(err);
-  insertDocuments(db,function(){
-      client.close();
-  });
-
-});
-
-
 
 
 var nodemailer = require('nodemailer');
