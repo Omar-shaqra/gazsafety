@@ -123,7 +123,7 @@ transporter.sendMail(mailOptions2, function(error, info){
 });
 
 
-app.get("/Register/register.html",function(req,res){
+app.get("/Register",function(req,res){
 
   res.render("register");
 });
