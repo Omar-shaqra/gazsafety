@@ -39,7 +39,7 @@ const clientSchema = new mongoose.Schema({
   paymentmethod:String
 })
 
-const Client = mongoose.model("Client",clientSchemasSchema);
+const Client = mongoose.model("Client",clientSchema);
 
 
 var nodemailer = require('nodemailer');
@@ -143,5 +143,5 @@ app.post("/Register",function(req,res){
       });
   user.save();
 
-  res.render("register");
+  res.redirect("register");
 });
