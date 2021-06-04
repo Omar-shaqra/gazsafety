@@ -173,8 +173,23 @@ var from = req.body.email;
 }
 
 
-
 app.get("/signin",function(req,res){
 
   res.render("signin");
+});
+
+app.post("/signin",async function(req,res){
+  var name = req.body.name;
+  var pass = req.body.pass;
+  console.log(name + pass);
+
+  const user = await Client.findById(name).exec()
+  console.log(user);
+await console.log(user.password);
+if(pass == user.password){
+  res.send("welcome");
+}else{
+  res.redirect("signin");
+}
+
 });
