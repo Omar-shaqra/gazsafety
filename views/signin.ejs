@@ -530,18 +530,22 @@ body{
     <div class="scontainer">
         <div class="box">
         <h1>Sign In</h1>
+        <form  method="post">
+
+
         <div class="row">
-            <input type="text" placeholder="Username">
+            <input type="text" name="name" placeholder="Username">
         </div>
         <div class="row">
-            <input type="password" placeholder="Password">
+            <input type="password" name="pass" placeholder="Password">
         </div>
         <div class="row">
-            <a id="login" href="#">Log In</a>
+          <a id="login" href="#"><input type="submit" name="" value="Log In"></a>
         </div>
         <div class="row">
             <a id="forgetpass" href="#">Forget Password</a>
         </div>
+          </form>
         </div>
     </div>
 
