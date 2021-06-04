@@ -172,24 +172,32 @@ var from = req.body.email;
   console.log(e);
 }
 
-
+var err="";
 app.get("/signin",function(req,res){
 
-  res.render("signin");
+  res.render("signin",{err:err});
 });
 
 app.post("/signin",async function(req,res){
   var name = req.body.name;
   var pass = req.body.pass;
   console.log(name + pass);
+try {
 
-  const user = await Client.findById(name).exec()
-  console.log(user);
-await console.log(user.password);
-if(pass == user.password){
-  res.send("welcome");
-}else{
-  res.redirect("signin");
+    const user = await Client.findById(name).exec()
+    console.log(user);
+
+  await console.log(user.password);
+  if(pass == user.password){
+    res.send("welcome");
+  }else{
+    err = 'error'
+    res.redirect("signin");
+  }
+
+} catch (e) {
+    err = 'error'
+res.redirect("signin");
 }
 
 });
