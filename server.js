@@ -134,7 +134,7 @@ app.get("/Register",function(req,res){
 try {
   app.post("/Register",async function(req,res){
 
-
+var from = req.body.email;
         const client = new Client({
            name : req.body.name,
            email : req.body.email,
@@ -144,8 +144,30 @@ try {
         });
     await  client.save();
 
+    await console.log(client._id);
+
+   const output = `
+      <p>thank you for register yuor id is :</p>
+
+        <li>id ${client._id}</li>`;
+
+     var mailOptions2 = {
+      from: 'omarshaqra26@gmail.com' ,
+      to: from,
+      subject: "test example6",
+      html: output
+    };
+
+  await  transporter.sendMail(mailOptions2, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+
     res.redirect("/Register");
   });
+});
 } catch (e) {
   console.log(e);
 }
