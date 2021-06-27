@@ -203,9 +203,8 @@ res.redirect("signin");
 });
 
 
-app.get("/:id",function(req,res){
-  var id = req.params.id;
-  res.send(id);
-}) {
+app.get('/:id',async(req,res,next)=>{
+const up =req.params.id;
 
-}
+res.send(up);
+})
