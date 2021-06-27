@@ -203,7 +203,9 @@ res.redirect("signin");
 });
 
 
-app.get("/:id") {
+app.get("/:id",function(req,res){
   var id = req.params.id;
   res.send(id);
+}) {
+
 }
