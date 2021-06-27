@@ -203,7 +203,7 @@ res.redirect("signin");
 });
 
 
-app.get('/:id',async(req,res,next)=>{
+app.get('/embaded/:id',async(req,res,next)=>{
 const up =req.params.id;
 
 res.send(up);
