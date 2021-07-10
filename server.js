@@ -41,6 +41,14 @@ const clientSchema = new mongoose.Schema({
 
 const Client = mongoose.model("Client",clientSchema);
 
+const valueSchema = new mongoose.Schema({
+  id:String,
+  value:String
+})
+
+const Value = mongoose.model("Value",valueSchema);
+
+
 
 var nodemailer = require('nodemailer');
 //let transporter = nodemailer.createTransport(options[, defaults])
@@ -203,8 +211,14 @@ res.redirect("signin");
 });
 
 
-app.get('/embaded/:id',async(req,res,next)=>{
-const up =req.params.id;
+app.get('/embaded/:id/:value',async(req,res,next)=>{
+const id =req.params.id;
+const value =req.params.it;
+const value = new Value({
+  id : id,
+  value : value
+});
+value.save();
 
-res.send(up);
+
 })
