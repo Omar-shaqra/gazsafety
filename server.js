@@ -197,7 +197,7 @@ try {
 
   await console.log(user.password);
   if(pass == user.password){
-    res.send("welcome");
+    res.render("dashboard");
   }else{
     err = 'error'
     res.redirect("signin");
