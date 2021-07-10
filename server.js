@@ -220,5 +220,7 @@ const value = new Value({
 });
 value.save();
 
+res.send(id + val);
+
 
 })
