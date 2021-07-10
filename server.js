@@ -213,10 +213,10 @@ res.redirect("signin");
 
 app.get('/embaded/:id/:value',async(req,res,next)=>{
 const id =req.params.id;
-const value =req.params.value;
+const val =req.params.value;
 const value = new Value({
   id : id,
-  value : value
+  value : val
 });
 value.save();
 
