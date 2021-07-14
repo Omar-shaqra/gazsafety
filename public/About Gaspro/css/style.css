@@ -91,7 +91,9 @@ body {
       text-align: left;
 			color: white;
   }
-
+	.about-section p{
+		color: white;
+	}
   .container {
     padding: 0 16px;
   }
