@@ -89,6 +89,7 @@ body {
 
   .about-section h1{
       text-align: left;
+			color: white;
   }
 
   .container {
@@ -105,12 +106,9 @@ body {
     color: grey;
   }
 
-
-
   .button:hover {
     background-color: #555;
   }
-
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;
@@ -161,10 +159,10 @@ body {
 		font-weight: bold;
 	}
 
-		.head h1 span {
-			color: #06a5b8;
-			font-family: French Script MT;
-		}
+	.head h1 span {
+		color: #06a5b8;
+		font-family: French Script MT;
+	}
 
 	.contact img {
 		width: 42px;
