@@ -66,9 +66,7 @@ body {
   *, *:before, *:after {
     box-sizing: inherit;
   }
-	.in{
-		height:400px;
-	}
+
   .column {
     float: left;
     width: 33.3%;
