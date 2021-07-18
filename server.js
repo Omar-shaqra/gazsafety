@@ -247,7 +247,8 @@ app.get('/embaded/:id/:value',async(req,res,next)=>{
 value.save();
 
   if (val == "true"){
-  const worker = await Worker.find({acc:'1'}).sort([['DateOfHiring']])
+  const worker = await Worker.find({acc:'1'}).sort([['DateOfHiring',-1]])
+  console.log(worker);
   console.log(worker[0]._id + "  it work");
   const wid = String(worker[0]._id) ;
 console.log(wid + "before");
