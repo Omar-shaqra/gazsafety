@@ -210,9 +210,11 @@ app.get("/signin",function(req,res){
   res.render("signin",{err:err});
 });
 
+
 app.post("/signin",async function(req,res){
   var name = req.body.name;
   var pass = req.body.pass;
+
   console.log(name + pass);
   try {
 
@@ -221,7 +223,7 @@ app.post("/signin",async function(req,res){
 
   await console.log(user.password);
   if(pass == user.password){
-    res.render(`dashboard/:${name}`);
+    res.redirect(`/dashboard/${name}`);
   }else{
     err = 'error'
     res.redirect("signin");
@@ -308,8 +310,9 @@ res.send(id + val);
 })
 
 
-app.get('/dashboard/:id',(req,res)=>{
-
+app.get('/dashboard/:id',async (req,res)=>{
+  const id =req.params.id;
+console.log(id + ' is here');
 
 res.render("dashboard")
 })
