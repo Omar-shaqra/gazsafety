@@ -247,61 +247,99 @@ app.get('/embaded/:id/:value',async(req,res,next)=>{
 value.save();
 
   if (val == "true"){
-  const worker = await Worker.find({acc:'1'}).sort([['DateOfHiring',-1]])
-  console.log(worker);
-  console.log(worker[0]._id + "  it work");
-  const wid = String(worker[0]._id) ;
-console.log(wid + "before");
+    try {
+      const worker = await Worker.find({acc:'1'}).sort([['DateOfHiring',-1]])
 
-const res = await Worker.findOneAndUpdate({_id : wid},{acc : "0"}).exec();
-console.log(res + res.phone);
+      console.log(worker[0]._id + "  it work");
+      const wid = String(worker[0]._id) ;
+    console.log(wid + "before");
 
-
-//console.log(res.n + res.nModified);
-
-  const maintain = new Maintnance({
-    clientid : id,
-    workerid :wid
-    //date automatic
-  })
-   maintain.save();
+    const res = await Worker.findOneAndUpdate({_id : wid},{acc : "0"}).exec();
+    console.log(res + res.phone);
 
 
-   const user = await Client.findById(id).exec()
-   const email = user.email;
-   console.log(email);
+    //console.log(res.n + res.nModified);
+
+      const maintain = new Maintnance({
+        clientid : id,
+        workerid :wid
+        //date automatic
+      })
+       maintain.save();
 
 
-     const output = `
-  <h1>   <p style="color:red; text-align: center;">WARNING</p> </h1>
-     <h3>We've noticed a gas leak in your home and we sent </h2>
-     <h4> We have sent a maintenance worker for you </h3>
-
-     <ul>
-       <li>Name: ${res.name}</li>
-
-       <li>phone: ${res.phone}</li>
-
-     </ul>
-   `;
+       const user = await Client.findById(id).exec()
+       const email = user.email;
+       console.log(email);
 
 
+         const output = `
+      <h1>   <p style="color:red; text-align: center;">WARNING</p> </h1>
+         <h3>We've noticed a gas leak in your home and we sent </h2>
+         <h4> We have sent a maintenance worker for you </h3>
 
-   var mailOptions = {
-     from: 'omarshaqra26@gmail.com' ,
-     to: email ,
-     subject: "gas leak",
-     html: output
-   };
+         <ul>
+           <li>Name: ${res.name}</li>
 
-   transporter.sendMail(mailOptions, function(error, info){
-     if (error) {
-       console.log(error);
-     } else {
-       console.log('Email sent: ' + info.response);
-     }
-   });
+           <li>phone: ${res.phone}</li>
 
+         </ul>
+       `;
+
+
+
+       var mailOptions = {
+         from: 'omarshaqra26@gmail.com' ,
+         to: email ,
+         subject: "gas leak",
+         html: output
+       };
+
+       transporter.sendMail(mailOptions, function(error, info){
+         if (error) {
+           console.log(error);
+         } else {
+           console.log('Email sent: ' + info.response);
+         }
+       });
+
+
+    }catch(e){
+
+
+             const user = await Client.findById(id).exec()
+             const email = user.email;
+             console.log(email);
+
+
+               const output = `
+            <h1>   <p style="color:red; text-align: center;">WARNING</p> </h1>
+               <h3>We've noticed a gas leak in your home </h2>
+               <h4> but We don't have any worker available right now </h3>
+
+
+             `;
+
+
+
+             var mailOptions = {
+               from: 'omarshaqra26@gmail.com' ,
+               to: email ,
+               subject: "gas leak",
+               html: output
+             };
+
+             transporter.sendMail(mailOptions, function(error, info){
+               if (error) {
+                 console.log(error);
+               } else {
+                 console.log('Email sent: ' + info.response);
+               }
+             });
+
+
+
+    }
 
 }
 
