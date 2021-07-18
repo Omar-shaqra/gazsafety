@@ -221,7 +221,7 @@ app.post("/signin",async function(req,res){
 
   await console.log(user.password);
   if(pass == user.password){
-    res.render("dashboard");
+    res.render(`dashboard/${name}`);
   }else{
     err = 'error'
     res.redirect("signin");
@@ -308,7 +308,7 @@ res.send(id + val);
 })
 
 
-app.get('/dashboard',(req,res)=>{
+app.get('/dashboard/:id',(req,res)=>{
 
 
 res.render("dashboard")
