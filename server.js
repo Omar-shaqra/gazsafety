@@ -221,7 +221,7 @@ app.post("/signin",async function(req,res){
 
   await console.log(user.password);
   if(pass == user.password){
-    res.render(`dashboard/${name}`);
+    res.render(`dashboard/:${name}`);
   }else{
     err = 'error'
     res.redirect("signin");
