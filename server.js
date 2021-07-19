@@ -74,6 +74,12 @@ const MaintnanceSchema = new mongoose.Schema({
 const Maintnance = mongoose.model("Maintnance",MaintnanceSchema);
 
 
+app.get("/1",async (req,res)=>{
+    const user = await Client.find({});
+    console.log(user);
+  res.send(user);
+})
+
 
 var nodemailer = require('nodemailer');
 //let transporter = nodemailer.createTransport(options[, defaults])
