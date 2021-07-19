@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyparser=require("body-parser");
 const app=express();
+const request = require('request');
 
 app.use(express.static(__dirname + '/public'));
 app.engine('html', require('ejs').renderFile);
@@ -66,13 +67,13 @@ const MaintnanceSchema = new mongoose.Schema({
   feedback : {
     notes : { type: String, required: false },
     rate : { type: String, required: false }
-  }
+  },
+  problem : { type: String, required: false }
 
 })
 
 
 const Maintnance = mongoose.model("Maintnance",MaintnanceSchema);
-
 
 app.get("/1",async (req,res)=>{
     const user = await Client.find({});
@@ -80,6 +81,20 @@ app.get("/1",async (req,res)=>{
   res.send(user);
 })
 
+app.get("/2",async (req,res)=>{
+  const request = require('request');
+request('https://gazsafety.herokuapp.com/1', function (error, response, body) {
+  console.error('error:', error); // Print the error if one occurred
+  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+  console.log('body:', body); // Print the HTML for the Google homepage.
+  console.log("json : " + body);
+  res.send(body);
+
+});
+
+res.send(request);
+
+})
 
 var nodemailer = require('nodemailer');
 //let transporter = nodemailer.createTransport(options[, defaults])
@@ -359,9 +374,22 @@ app.get('/dashboard/:id',async (req,res)=>{
   const id =req.params.id;
 console.log(id + ' is here');
 
-res.render("dashboard")
+const maintnance = await Maintnance.find({clientid : id}).exec();
+
+//console.log(worker[0].name);
+
+
+res.render("dashboard",{maintnance:maintnance})
 })
 
+app.get('/worker/:id',async (req,res)=>{
+console.log(" worker data for "+ req.params.id);
+const id = req.params.id;
+const worker = await Worker.findById(id).exec();
+console.log(worker);
+
+res.render("worker",{worker:worker})
+})
 /*
 app.get('/worker',async (req,res)=>{
 
