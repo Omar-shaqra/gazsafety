@@ -6,5 +6,37 @@
   </head>
   <body>
     <p>dashboard</p>
+    <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
+
+
+
+        <thead>
+          <tr>
+            <th scope="col"> </th>
+            <th scope="col">date</th>
+            <th scope="col">worker id</th>
+            <th scope="col">problem</th>
+                <th scope="col"> </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <% maintnance.forEach(function(maintnance){%>
+
+
+          <tr>
+            <td> </td>
+            <td><%=maintnance.date%></td>
+            <td>
+          <a href="/worker/<%=maintnance.workerid%>"> <%=maintnance.workerid%></a>
+            </td>
+            <td><%=maintnance.problem%></td>
+            <td> <a href="#">feedback</a> </td>
+
+          </tr>
+          <%  }) %>
+        </tbody>
+
+    </table>
   </body>
 </html>
