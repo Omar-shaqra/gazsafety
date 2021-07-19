@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
+
+
+
+        <thead>
+          <tr>
+            <th scope="col">name </th>
+            <th scope="col">DateOfHiring</th>
+            <th scope="col">Phone</th>
+            <th scope="col">availability</th>
+                <th scope="col"> </th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+          <tr>
+            <td><%=worker.name%> </td>
+            <td><%=worker.DateOfHiring%></td>
+            <td>
+              <%=worker.phone%>
+            </td>
+            <td><%=worker.acc%></td>
+
+
+          </tr>
+        </tbody>
+
+      </table>
+
+    <textarea name="note" placeholder="any comment about the worker will help :" rows="8" cols="80"></textarea>
+
+
+  </body>
+</html>
