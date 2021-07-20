@@ -78,7 +78,7 @@ const Maintnance = mongoose.model("Maintnance",MaintnanceSchema);
 app.get("/1",async (req,res)=>{
     const user = await Client.find({});
     console.log(user);
-  res.send(user);
+  res.json(user);
 })
 
 app.get("/2",async (req,res)=>{
