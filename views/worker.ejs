@@ -4,8 +4,14 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+<script type="text/javascript">
+function goBack() {
+window.history.back();
+}
+</script>
 
+  <body>
+  <button onclick="goBack()">Go Back</button>
 
     <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
 
@@ -37,13 +43,16 @@
           </tr>
         </tbody>
 
-    </table>
-    <form  method="post">
+      </table>
 
-      <input type="text" placeholder="rate:" name="rate" value="">
-      <textarea name="note" placeholder="any comment about the worker will help :" rows="8" cols="80"></textarea>
-<button type="submit" name="button">submit</button>
-    </form>
+      <form  method="post">
+  <input type="hidden" name="id" value="worker._id">
+        <input type="text" placeholder="rate:" name="rate" value="">
+        <textarea name="note" placeholder="any comment about the worker will help :" rows="8" cols="80"></textarea>
+  <button type="submit" name="button">submit</button>
+      </form>
+
+
 
   </body>
 </html>
