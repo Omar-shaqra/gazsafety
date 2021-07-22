@@ -3,42 +3,108 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+      :root {
+        --main-color: #28A7E9;  
+      }
+      table thead {
+        background-color: var(--main-color);
+        color: #fff;
+        font-size: 16px;
+      }
+      .btn { 
+          border: 2px solid var(--main-color) !important;
+          border-radius:20px;
+      }
+      .btn:hover {
+          background-color: var(--main-color) !important;
+          color:#fff
+      }
+      /* Start Modal */
+      .modal-content {
+        color: #000;
+        text-align: center;
+        }
+        .modal-header {
+            background: var(--main-color);
+            color: #fff;
+        }
+        .modal-header h1 {
+            width: 100%;
+            font-size: 30px;
+            font-weight: 400;
+        }
+        .modal-body {
+            padding: 3rem
+        }
+        .modal-body .form-group {
+            margin: 0 30px 30px;
+        }
+        .modal-body form input, 
+        .modal-body form textarea {
+            border: 1px solid var(--main-color);
+            border-radius: 3rem;
+        }
+        .modal-body form button {
+            border-radius: 25px;
+            width: 85%
+        }
+    </style>
   </head>
   <body>
-    <p>dashboard</p>
 
     <p><%=statue%></p>
-    <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
-
-
-
-        <thead>
-          <tr>
-            <th scope="col"> </th>
-            <th scope="col">date</th>
-            <th scope="col">worker id</th>
-            <th scope="col">problem</th>
-                <th scope="col"> </th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <% maintnance.forEach(function(maintnance){%>
-
-
-          <tr>
-            <td> </td>
-            <td><%=maintnance.date%></td>
-            <td>
-          <a href="/worker/<%=maintnance.workerid%>"> <%=maintnance.workerid%></a>
-            </td>
-            <td><%=maintnance.problem%></td>
-            <td> <a href="#">feedback</a> </td>
-
-          </tr>
-          <%  }) %>
-        </tbody>
-
-    </table>
+    <div class="container">
+    <p>dashboard</p>
+      <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
+          <thead>
+            <tr>
+              <th scope="col"> </th>
+              <th scope="col">date</th>
+              <th scope="col">worker id</th>
+              <th scope="col">problem</th>
+              <th scope="col">feedback</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% maintnance.forEach(function(maintnance){%>
+            <tr>
+              <td> </td>
+              <td><%=maintnance.date%></td>
+              <td>
+            <a href="/worker/<%=maintnance.workerid%>"> <%=maintnance.workerid%></a>
+              </td>
+              <td><%=maintnance.problem%></td>
+              <td> 
+                <button class="btn" data-toggle="modal" data-target="#FeedbackModal">feedback</button>
+              </td>
+            </tr>
+            <%  }) %>
+          </tbody>
+      </table>
+      <!-- START Feedback -->
+      <div class="modal fade" id="FeedbackModal" tabindex="-1" role="dialog" aria-labelledby="FeedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1> Feedback</h1>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control"  placeholder="Your Feedback" required rows="6"></textarea>
+                        </div>
+                        <!-- Start Rate -->
+                            
+                        <!-- End Rate -->
+                        <button type="submit" class="btn btn-outline-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Feedback -->
+    </div>
   </body>
 </html>
