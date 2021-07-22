@@ -65,7 +65,7 @@ height: 500px;
 	border-top:2px solid #FFF;
 	border-bottom:2px solid #FFF;
 }
-.header .slider .slider-heading button{
+/* .header .slider .slider-heading button{
 	color:#FFF;
 	background:none; 
     margin-top:30px;
@@ -79,7 +79,7 @@ height: 500px;
 	box-shadow: 0 50px 50px white;
 	margin-top: 40px;
 	cursor:pointer;
-}
+} */
 .header .navbar{
 	background-color:#252F31;
 	color:#fff;
