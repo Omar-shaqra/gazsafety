@@ -229,6 +229,7 @@ var err="";
 app.get("/signin",function(req,res){
 
   res.render("signin",{err:err});
+    err = ' ' ;
 });
 
 
