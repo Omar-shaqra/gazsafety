@@ -106,7 +106,7 @@ var transporter = nodemailer.createTransport({
    auth: {
     //     type: 'OAuth2',
     user: 'omarshaqra26@gmail.com',
-    pass: 'shaqra123456'
+    pass: 'shaqra1299'
   },
    tls:{
       rejectUnauthorized:false
