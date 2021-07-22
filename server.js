@@ -78,7 +78,7 @@ const Maintnance = mongoose.model("Maintnance",MaintnanceSchema);
 app.get("/1",async (req,res)=>{
     const user = await Client.find({});
     console.log(user);
-  res.json(user);
+  res.send(user);
 })
 
 app.get("/2",async (req,res)=>{
@@ -229,7 +229,7 @@ var err="";
 app.get("/signin",function(req,res){
 
   res.render("signin",{err:err});
-    err = ' ' ;
+  err = ' ' ;
 });
 
 
@@ -249,6 +249,7 @@ app.post("/signin",async function(req,res){
   }else{
     err = 'error'
     res.redirect("signin");
+
   }
 } catch (e) {
     err = 'error'
@@ -262,11 +263,11 @@ app.get('/embaded/:id/:value',async(req,res,next)=>{
   const id =req.params.id;
   const val =req.params.value;
 
-  const value = new Value({
+  const value = await new Value({
   id : id,
   value : val
 });
-value.save();
+await value.save();
 
   if (val == "true"){
     try {
@@ -375,12 +376,22 @@ app.get('/dashboard/:id',async (req,res)=>{
   const id =req.params.id;
 console.log(id + ' is here');
 
+let statue = 0;
+
+  const val = await Value.findOne({id : id},{value : true}).exec();
+console.log(val);
+
+  if (val)  {
+     statue = 1;
+  }
+console.log(statue);
+
 const maintnance = await Maintnance.find({clientid : id}).exec();
 
 //console.log(worker[0].name);
 
 
-res.render("dashboard",{maintnance:maintnance})
+res.render("dashboard",{maintnance:maintnance , statue:statue })
 })
 
 app.get('/worker/:id',async (req,res)=>{
@@ -391,6 +402,11 @@ console.log(worker);
 
 res.render("worker",{worker:worker})
 })
+
+app.post('/worker/:id',(req,res)=>{
+
+})
+
 /*
 app.get('/worker',async (req,res)=>{
 
