@@ -57,7 +57,7 @@
 /*end header*/
 
 body{
-    background-image: url("../../images/fire.jpg");
+    background-image: url("../../images/schdule.jfif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,7 +85,7 @@ body{
     font-weight: bold;
     margin: auto;
     margin-bottom: 30px;
-    
+
 }
 
 .registration-form .item{
