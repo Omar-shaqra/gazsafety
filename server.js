@@ -270,7 +270,7 @@ app.post("/signin",async function(req,res){
 
 app.get('/embaded/:id/:value/:fire',async(req,res,next)=>{
   const id =req.params.id;
-  const value =parseInt(req.params.value);
+  const values =parseInt(req.params.value);
   const fire = parseInt(req.params.fire);
 
 var val = " ";
@@ -282,7 +282,7 @@ await value.save();
 
 
 
-if(value>= 500){
+if(values>= 500){
   val = "true";
 
 }
