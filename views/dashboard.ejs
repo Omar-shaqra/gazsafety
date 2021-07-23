@@ -3,12 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+      table thead {
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 16px;
+}
+.btn { 
+    border: 2px solid var(--main-color) !important;
+    border-radius:20px;
+}
+.btn:hover {
+    background-color: var(--main-color) !important;
+    color:#fff
+}
+    </style>
   </head>
   <body>
     <p>dashboard</p>
 
     <p><%=statue%></p>
-    <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
+    <!-- <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
 
 
 
@@ -39,6 +54,44 @@
           <%  }) %>
         </tbody>
 
-    </table>
+    </table> -->
+    <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">Process No.</th>
+              <th scope="col">Date</th>
+              <th scope="col">Price</th>
+              <th scope="col">Feedback</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th scope="row">1</th>
+              <td>1-1-1</td>
+              <td>100</td>
+              <td>
+                  <button class="btn" >feedback</button>
+              </td>
+          </tr>
+          <tr>
+              <th scope="row">1</th>
+              <td>1-1-1</td>
+              <td>100</td>
+              <td>
+                  <button class="btn" >feedback</button>
+              </td>
+          </tr>
+          <tr>
+              <th scope="row">1</th>
+              <td>1-1-1</td>
+              <td>100</td>
+              <td>
+                  <button class="btn" >feedback</button>
+              </td>
+          </tr>
+          
+      </tbody>
+<MaintainanceFeedback />
+</table>
   </body>
 </html>

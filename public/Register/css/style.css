@@ -77,7 +77,7 @@ body {
 }
 /*end header*/
 /*Start main*/
-.title {
+/* .title {
 	margin-top: 100px;
 	color: teal;
 }
@@ -134,7 +134,7 @@ input {
 
 #sub:hover {
 	background-color: turquoise;
-}
+} */
 /*End main*/
 /*Start footer*/
 footer {
