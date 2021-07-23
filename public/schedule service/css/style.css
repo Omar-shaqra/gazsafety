@@ -1,10 +1,4 @@
-body{
-    background-image: url("../images/fire.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-}
+
 /*start main rules*/
 * {
 	padding: 0;
@@ -62,7 +56,13 @@ body{
 .header .navbar ul li a:hover {color: #06a5b8;}
 /*end header*/
 
-
+body{
+    background-image: url("../../images/fire.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
 
 .registration-form{
 	padding: 50px 0;
