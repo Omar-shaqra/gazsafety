@@ -49,6 +49,15 @@ const valueSchema = new mongoose.Schema({
 
 const Value = mongoose.model("Value",valueSchema);
 
+
+const fireSchema = new mongoose.Schema({
+  clientid:String,
+  date : {type: Date, default: Date.now},
+})
+
+const Fire = mongoose.model("Fire",fireSchema);
+
+
 const workerSchema = new mongoose.Schema({
   name:String,
   salary:String,
@@ -259,15 +268,24 @@ app.post("/signin",async function(req,res){
 });
 
 
-app.get('/embaded/:id/:value',async(req,res,next)=>{
+app.get('/embaded/:id/:value/:fire',async(req,res,next)=>{
   const id =req.params.id;
-  const val =req.params.value;
+  const value =parseInt(req.params.value);
+  const fire = parseInt(req.params.fire);
 
+var val = " ";
   const value = await new Value({
   id : id,
   value : val
 });
 await value.save();
+
+
+
+if(value>= 500){
+  val = "true";
+
+}
 
   if (val == "true"){
     try {
@@ -298,7 +316,7 @@ await value.save();
 
          const output = `
       <h1>   <p style="color:red; text-align: center;">WARNING</p> </h1>
-         <h3>We've noticed a gas leak in your home and we sent </h2>
+         <h3>We've noticed a gas leak in your home  </h2>
          <h4> We have sent a maintenance worker for you </h3>
 
          <ul>
@@ -326,6 +344,9 @@ await value.save();
          }
        });
 
+if ( fire >= 200){
+
+}
 
     }catch(e){
 
