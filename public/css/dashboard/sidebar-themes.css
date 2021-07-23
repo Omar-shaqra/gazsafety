@@ -22,13 +22,13 @@
     .default-theme .sidebar-wrapper .sidebar-menu a:hover i,
     .default-theme .sidebar-wrapper .sidebar-menu a:hover:before,
     .default-theme .sidebar-wrapper .sidebar-menu li.active a i {
-      // color: #22ff16;
+      /* // color: #22ff16; */
       color: #fff;
-      // background-color: #fff !important;
-      // color: var(--main-color);
+      /* // background-color: #fff !important; */
+      /* // color: var(--main-color); */
      }
     .default-theme .sidebar-wrapper .sidebar-menu ul li a i {
-      // background-color: #2b2b2b;
+      /* // background-color: #2b2b2b; */
       background-color: var(--main-color) !important;
       color:#fff;
      }
