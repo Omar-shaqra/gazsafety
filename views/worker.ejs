@@ -2,18 +2,48 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Worker</title>
+    <style>
+      h2 {
+        border-bottom: 4px solid var(--main-color);
+        padding-bottom: 20px;
+        text-align:center;
+        margin:0 18% 40px;
+      }
+      .decorated {
+          color: var(--main-color)
+      }
+      table thead {
+          background-color: var(--main-color);
+          color: #fff;
+          font-size: 16px;
+      }
+      .btn { 
+          border: 2px solid var(--main-color) !important;
+          border-radius:20px;
+      }
+      .btn:hover {
+          background-color: var(--main-color) !important;
+          color:#fff
+      }
+    </style>
   </head>
 <script type="text/javascript">
 function goBack() {
 window.history.back();
+}
+function currentExperience() {
+  var currentYear = new Date().getFullYear();
+  var hiringYear = worker.DateOfHiring.getFullYear();
+  var experience = currentYear - hiringYear;
+  document.getElementById('worker-experience').innerHTML = experience;
 }
 </script>
 
   <body>
   <button onclick="goBack()">Go Back</button>
 
-    <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
+    <!-- <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
 
 
 
@@ -43,13 +73,41 @@ window.history.back();
           </tr>
         </tbody>
 
+      </table> -->
+
+      <!-- Start Table -->
+
+      <h2>This Is <span class="decorated">Maintainance Plan</span> For The Year <span class="decorated">2021</span></h2>
+      <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">name </th>
+                    <th scope="col">Experiencee</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">availability</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <th scope="row"><%=worker.name%></th>
+                    <td><%=worker.DateOfHiring%></td>
+                    <td><%=worker.phone%></td>
+                    <td><%=worker.acc%></td>
+                    <td>
+                        <button class="btn">feedback</button>
+                    </td>
+                </tr>
+            </tbody>
       </table>
 
+      <!-- End Table -->
+
       <form  method="post">
-  <input type="hidden" name="id" value="worker._id">
+        <input type="hidden" name="id" value="worker._id">
         <input type="text" placeholder="rate:" name="rate" value="">
         <textarea name="note" placeholder="any comment about the worker will help :" rows="8" cols="80"></textarea>
-  <button type="submit" name="button">submit</button>
+        <button type="submit" name="button">submit</button>
       </form>
 
 
