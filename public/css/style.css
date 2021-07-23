@@ -40,7 +40,7 @@
 	background-color: #5d8edb;
 	border-radius: 7px;
 	box-shadow: 0 0 10px white;
-} 
+}
 .header .sign ul li a {
 	text-decoration: none;
 	color: #FFF;
@@ -65,9 +65,9 @@ height: 500px;
 	border-top:2px solid #FFF;
 	border-bottom:2px solid #FFF;
 }
-/* .header .slider .slider-heading button{
+ .header .slider .slider-heading button{
 	color:#FFF;
-	background:none; 
+	background:none;
     margin-top:30px;
     font-size:30px;
     font-weight:bold;
@@ -79,7 +79,7 @@ height: 500px;
 	box-shadow: 0 50px 50px white;
 	margin-top: 40px;
 	cursor:pointer;
-} */
+} 
 .header .navbar{
 	background-color:#252F31;
 	color:#fff;
@@ -142,7 +142,7 @@ height: 500px;
 }
 .features .feat h2{text-transform:uppercase; color:#555;}
 .features .feat p{
-	color:#222; 
+	color:#222;
 	font-family:"Roboto", 'MV Boli' ;
 	font-size:22px;
 	width:95%;
@@ -170,13 +170,13 @@ height: 500px;
 }
 .testmonials h5{color:#555; text-transform:uppercase;}
 .testmonials ul{
-	text-align:center; 
+	text-align:center;
 	list-style:none;
 	padding-left:0;
 }
 .testmonials ul li{
-	width:5px; 
-	height:5px; 
+	width:5px;
+	height:5px;
 	display:inline-block;
 	border:1px solid #06a5b8;
 	border-radius:100%;
@@ -188,7 +188,7 @@ height: 500px;
 
 /*start contact me*/
 .contact{
-	background-color:#252F31; 
+	background-color:#252F31;
 	overflow:hidden;
 	padding:50px 0 70px 0;
 }
@@ -201,11 +201,11 @@ height: 500px;
 .contact .form input[type="text"]{background-color:#4B5557; color:#FFF; border:0; padding:10px; width:90%; margin-bottom:30px}
 .contact .form textarea{
 	background-color:#4B5557;
-	color:#FFF; 
-	border:0; 
-	padding:10px; 
+	color:#FFF;
+	border:0;
+	padding:10px;
 	width:90%;
-    margin-bottom:30px 
+    margin-bottom:30px
     height:300px;
 }
 .button{
