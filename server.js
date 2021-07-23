@@ -407,6 +407,41 @@ app.post('/worker/:id',(req,res)=>{
 
 })
 
+app.get('/mobile/:id',async (req,res)=>{
+
+console.log(" mobile id "+ req.params.id);
+const id = req.params.id;
+
+const client = await Client.findById(id).exec();
+console.log(client.email);
+email = client.email;
+
+
+   const output = `
+      <p>thank you for register yuor id is :</p>
+
+        <li>id ${client._id}</li>`;
+
+     var mailOptions2 = {
+      from: 'omarshaqra26@gmail.com' ,
+      to: email,
+      subject: "Register",
+      html: output
+    };
+
+  await  transporter.sendMail(mailOptions2, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+})
+
+res.render("mobile")
+})
+
+
+
 /*
 app.get('/worker',async (req,res)=>{
 
