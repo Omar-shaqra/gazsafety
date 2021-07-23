@@ -140,12 +140,7 @@ h3{
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 2px;
-  padding: 2px;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+
 
 ::selection{
   background: rgba(23,162,184,0.3);
