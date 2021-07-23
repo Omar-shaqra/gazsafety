@@ -219,3 +219,63 @@ h3{
 }
 
 /*omar end here*/
+/*Start footer*/
+footer {
+  margin-top: 200px;
+  height: 250px;
+  background-color: gainsboro;
+}
+
+footer:hover {
+  background-color: #252F31;
+}
+
+footer table tr a:hover {
+  color: white;
+}
+
+td {
+  width: 600px;
+  text-align: center;
+}
+
+p {
+  margin-top: 15px;
+  color: darkslategray;
+  font-family: serif;
+  font-size: 20px;
+}
+
+h1 {
+  color: #4877CA;
+}
+
+a {
+  text-decoration: none;
+  color: #06a5b8;
+}
+
+.head h1 {
+  font-family: French Script MT;
+  font-size: 70px;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
+}
+
+.head h1 span {
+  color: #06a5b8;
+  font-family: French Script MT;
+}
+
+.contact img {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  text-align: center;
+}
+
+.about {
+  padding-top: 20px;
+}
+/*End footer*/
