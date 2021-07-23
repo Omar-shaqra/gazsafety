@@ -44,75 +44,76 @@ function currentExperience() {
 </script>
 
   <body>
-  <button onclick="goBack()">Go Back</button>
+    <div class="container-flauid p-5">
+      <button onclick="goBack()">Go Back</button>
 
-    <!-- <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
-
-
-
-        <thead>
-          <tr>
-            <th scope="col">name </th>
-            <th scope="col">DateOfHiring</th>
-            <th scope="col">Phone</th>
-            <th scope="col">availability</th>
-                <th scope="col"> </th>
-
-          </tr>
-        </thead>
-        <tbody>
+        <!-- <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
 
 
 
-          <tr>
-            <td><%=worker.name%> </td>
-            <td><%=worker.DateOfHiring%></td>
-            <td>
-              <%=worker.phone%>
-            </td>
-            <td><%=worker.acc%></td>
-
-
-          </tr>
-        </tbody>
-
-      </table> -->
-
-      <!-- Start Table -->
-
-      <h2>This Is <span class="decorated">Maintainance Plan</span> For The Year <span class="decorated">2021</span></h2>
-      <table class="table">
             <thead>
-                <tr>
-                    <th scope="col">name </th>
-                    <th scope="col">Experiencee</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">availability</th>
+              <tr>
+                <th scope="col">name </th>
+                <th scope="col">DateOfHiring</th>
+                <th scope="col">Phone</th>
+                <th scope="col">availability</th>
                     <th scope="col"> </th>
-                </tr>
+
+              </tr>
             </thead>
             <tbody>
-                <tr >
-                    <th scope="row"><%=worker.name%></th>
-                    <td><%=worker.DateOfHiring%></td>
-                    <td><%=worker.phone%></td>
-                    <td><%=worker.acc%></td>
-                    <td>
-                        <button class="btn">feedback</button>
-                    </td>
-                </tr>
+
+
+
+              <tr>
+                <td><%=worker.name%> </td>
+                <td><%=worker.DateOfHiring%></td>
+                <td>
+                  <%=worker.phone%>
+                </td>
+                <td><%=worker.acc%></td>
+
+
+              </tr>
             </tbody>
-      </table>
 
-      <!-- End Table -->
+          </table> -->
 
-      <form  method="post">
-        <input type="hidden" name="id" value="worker._id">
-        <input type="text" placeholder="rate:" name="rate" value="">
-        <textarea name="note" placeholder="any comment about the worker will help :" rows="8" cols="80"></textarea>
-        <button type="submit" name="button">submit</button>
-      </form>
+          <!-- Start Table -->
 
+          <h2>worker <span class="decorated">Feedback</span> </h2>
+          <table id='tbl_exporttable_to_xls' class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">name </th>
+                        <th scope="col">Experiencee</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">availability</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <th scope="row"><%=worker.name%></th>
+                        <td><%=worker.DateOfHiring%></td>
+                        <td><%=worker.phone%></td>
+                        <td><%=worker.acc%></td>
+                        <td>
+                            <button class="btn">feedback</button>
+                        </td>
+                    </tr>
+                </tbody>
+          </table>
+
+          <!-- End Table -->
+
+          <form  method="post">
+            <input type="hidden" name="id" value="worker._id">
+            <input type="text" placeholder="rate:" name="rate" value="">
+            <textarea name="note" placeholder="any comment about the worker will help :" rows="8" cols="80"></textarea>
+            <button type="submit" name="button">submit</button>
+          </form>
+    </div>
 
 
   </body>
