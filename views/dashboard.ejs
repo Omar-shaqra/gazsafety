@@ -3,24 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <style>
-      :root {
-        --main-color: #28A7E9;  
-      }
-      table thead {
-        background-color: var(--main-color);
-        color: #fff;
-        font-size: 16px;
-        }
-        .btn { 
-            border: 2px solid var(--main-color) !important;
-            border-radius:20px;
-        }
-        .btn:hover {
-            background-color: var(--main-color) !important;
-            color:#fff
-        }
-    </style>
+    <link rel="stylesheet" href="../public/css/dashboard/main.scss">
+    <link rel="stylesheet" href="../public/css/dashboard/sidebar-themes.scss">
+    <link rel="stylesheet" href="../public/css/dashboard/custom.scss">
   </head>
   <body>
     <p>dashboard</p>
@@ -55,46 +40,86 @@
 
           </tr>
           <%  }) %>
-        </tbody>
+    </tbody>
 
-    </table> -->
-    <table class="table">
-      <thead>
-          <tr>
-              <th scope="col">Process No.</th>
-              <th scope="col">Date</th>
-              <th scope="col">Price</th>
-              <th scope="col">Feedback</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <th scope="row">1</th>
-              <td>1-1-1</td>
-              <td>100</td>
-              <td>
-                  <button class="btn" >feedback</button>
-              </td>
-          </tr>
-          <tr>
-              <th scope="row">1</th>
-              <td>1-1-1</td>
-              <td>100</td>
-              <td>
-                  <button class="btn" >feedback</button>
-              </td>
-          </tr>
-          <tr>
-              <th scope="row">1</th>
-              <td>1-1-1</td>
-              <td>100</td>
-              <td>
-                  <button class="btn" >feedback</button>
-              </td>
-          </tr>
-          
-      </tbody>
-<MaintainanceFeedback />
-</table>
+    <!-- Start Side Bar -->
+      <div class="admin">
+        <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+          <div class="show-sidebar btn btn-sm btn-dar" style="position: fixed" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </div>
+          <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <router-link to="/" class="navbar-brand color-primary" style="color: var(--main-color);"><i class="fas fa-shield-alt fa-lg"></i>GazSafe</router-link>
+                    <div class="close-sidebar" onclick="toggleSidebar()">
+                      <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" style="border-radius: 50%" src="../public/images/dashboard/user.jpg" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Jhon
+                            <strong>Smith</strong>
+                        </span>
+                        <span class="user-role">Administrator</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- sidebar-menu  -->
+                <!-- sidebar-menu  -->
+            </div>
+              <!-- sidebar-footer  -->
+          </nav>
+            <!-- page-content  -->
+            <main class="page-content pt-2">
+                <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+                <div class="container-fluid p-5">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <h2>Pro Sidebar</h2>
+                            <p>This is a responsive sidebar template with dropdown menu based on bootstrap framework.</p>
+                        </div>
+    
+                        <div class="form-group col-md-12">
+                            <button id="toggle-sidebar" class="btn btn-secondary rounded-0" onclick="toggleSidebar()">
+                                <span>Toggle Sidebar</span>
+                            </button>
+                        </div>
+                    </div>
+                    <hr>    
+                </div>
+            </main>
+            <!-- page-content" -->
+        </div>
+      </div>  
+
+
+
+    <script>
+
+          // //toggle sidebar
+          // $('#toggle-sidebar').click(function () {
+          //   $('.page-wrapper').toggleClass('toggled');
+          // });
+
+          // //toggle sidebar overlay
+          // $('#overlay').click(function () {
+          //   $('.page-wrapper').toggleClass('toggled');
+          // });
+          ////////
+
+          function toggleSidebar() {
+            document.getElementsByClassName('page-wrapper').toggleClass('toggled')
+          }
+    </script>
+
   </body>
 </html>
