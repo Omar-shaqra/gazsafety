@@ -1127,8 +1127,8 @@ font-size: 16px;
 
     <!-- Start Side Bar -->
       <div class="admin">
-        <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
-          <div class="show-sidebar btn btn-sm btn-dar" style="position: fixed" onclick="getElementsByClassName('page-wrapper').toggleClass('toggled')">
+        <div class="page-wrapper default-theme sidebar-bg bg1 toggled" id="page-wrapper">
+          <div class="show-sidebar btn btn-sm btn-dar" style="position: fixed" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
           </div>
           <nav id="sidebar" class="sidebar-wrapper">
@@ -1136,7 +1136,7 @@ font-size: 16px;
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand">
                     <router-link to="/" class="navbar-brand color-primary" style="color: var(--main-color);"><i class="fas fa-shield-alt fa-lg"></i>GazSafe</router-link>
-                    <div class="close-sidebar" onclick="getElementsByClassName('page-wrapper').toggleClass('toggled')">
+                    <div class="close-sidebar" onclick="toggleSidebar()">
                       <i class="fas fa-times"></i>
                     </div>
                 </div>
@@ -1163,7 +1163,7 @@ font-size: 16px;
           </nav>
             <!-- page-content  -->
             <main class="page-content pt-2">
-                <div id="overlay" class="overlay" onclick="getElementsByClassName('page-wrapper').toggleClass('toggled')"></div>
+                <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
                 <div class="container-fluid p-5">
                     <div class="row">
                         <div class="form-group col-md-12">
@@ -1171,7 +1171,7 @@ font-size: 16px;
                             <p>This is a responsive sidebar template with dropdown menu based on bootstrap framework.</p>
                         </div>
                         <div class="form-group col-md-12">
-                            <button id="toggle-sidebar" class="btn btn-secondary rounded-0" onclick="getElementsByClassName('page-wrapper').toggleClass('toggled')">
+                            <button id="toggle-sidebar" class="btn btn-secondary rounded-0" onclick="toggleSidebar()">
                                 <span>Toggle Sidebar</span>
                             </button>
                         </div>
@@ -1228,7 +1228,7 @@ font-size: 16px;
         ////////
 
         function toggleSidebar() {
-          document.getElementsByClassName('page-wrapper').toggleClass('toggled')
+          document.getElementById('page-wrapper').toggleClass('toggled')
         }
   </script>
 
