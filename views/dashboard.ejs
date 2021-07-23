@@ -1182,38 +1182,28 @@ font-size: 16px;
                        <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Process No.</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Price</th>
+                                <th scope="col">Worker Id</th>
+                                <th scope="col">Problem</th>
                                 <th scope="col">Feedback</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">{{maintain.processNo}}</th>
-                                <td>{{maintain.processDate}}</td>
-                                <td>{{maintain.processPrice}}</td>
-                                <td>
-                                    <button class="btn">feedback</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">{{maintain.processNo}}</th>
-                                <td>{{maintain.processDate}}</td>
-                                <td>{{maintain.processPrice}}</td>
-                                <td>
-                                    <button class="btn">feedback</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">{{maintain.processNo}}</th>
-                                <td>{{maintain.processDate}}</td>
-                                <td>{{maintain.processPrice}}</td>
-                                <td>
-                                    <button class="btn">feedback</button>
-                                </td>
-                            </tr>
-                        </tbody>
+                          <% maintnance.forEach(function(maintnance){%>
+                
+                
+                          <tr>
+                            <td> </td>
+                            <td><%=maintnance.date%></td>
+                            <td>
+                          <a href="/worker/<%=maintnance.workerid%>"> <%=maintnance.workerid%></a>
+                            </td>
+                            <td><%=maintnance.problem%></td>
+                            <td> <a href="#">feedback</a> </td>
+                
+                          </tr>
+                          <%  }) %>
+                    </tbody>
                   </table>
 
                        <!--End Table  -->
