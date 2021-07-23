@@ -461,7 +461,9 @@ email = client.email;
 res.render("mobile")
 })
 
-
+app.get("/feedback/:id",(req,res)=>{
+  res.render("feedback");
+})
 
 /*
 app.get('/worker',async (req,res)=>{
