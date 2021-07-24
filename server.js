@@ -18,8 +18,8 @@ const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 
 
-mongoose.connect("mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/gazsafety?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
-
+mongoose.connect("mongodb+srv://shaqra:shaqra1299@cluster0.osy09.mongodb.net/gazsafety?retryWrites=true&w=majority",
+{ useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -572,6 +572,83 @@ app.get("/feedback/:id",(req,res)=>{
   res.render("feedback");
 })
 
+
+app.get("/service",(req,res)=>{
+
+
+  res.render("service");
+})
+
+app.post("/service",(req,res)=>{
+console.log(req.body.name);
+var name = req.body.name;
+var address = req.body.address;
+var email = req.body.email;
+var phone = req.body.phone;
+var problem = req.body.problem;
+var date = req.body.date;
+
+
+         const output = `
+
+         <h4> need service </h3>
+
+         <ul>
+           <li>Name: ${name}</li>
+
+           <li>phone: ${phone}</li>
+            <li>address: ${address}</li>
+             <li>email: ${email}</li>
+              <li>problem: ${problem}</li>
+               <li>phone: ${date}</li>
+
+         </ul>
+       `;
+
+
+
+       var mailOptions = {
+         from: 'omarshaqra26@gmail.com' ,
+         to: 'omarshaqra26@gmail.com' ,
+         subject: "service",
+         html: output
+       };
+
+       transporter.sendMail(mailOptions, function(error, info){
+         if (error) {
+           console.log(error);
+         } else {
+           console.log('Email sent: ' + info.response);
+         }
+       })
+
+
+       const output2 = `
+
+       <h4> thanks, we receive your order  </h3>
+
+
+     `;
+
+
+
+     var mailOptions2 = {
+       from: 'omarshaqra26@gmail.com' ,
+       to: email ,
+       subject: "service",
+       html: output2
+     };
+
+     transporter.sendMail(mailOptions2, function(error, info){
+       if (error) {
+         console.log(error);
+       } else {
+         console.log('Email sent: ' + info.response);
+       }
+     })
+
+  res.render("service");
+})
 
 /*
 app.get('/worker',async (req,res)=>{
