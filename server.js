@@ -573,6 +573,27 @@ app.get("/feedback/:id",(req,res)=>{
 })
 
 
+app.post("/feedback/:id",async (req,res)=>{
+  const id = req.params.id;
+
+var rate = req.body.rate;
+  var note = req.body.note;
+
+
+
+
+
+const maintnance  = await Maintnance.findOneAndUpdate({_id : id},{feedback : {
+  rate : rate,
+  notes : note
+}}).exec();
+
+await  maintnance.save();
+
+
+  res.render("feedback");
+})
+
 app.get("/service",(req,res)=>{
 
 
