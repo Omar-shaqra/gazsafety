@@ -49,6 +49,7 @@
           border-radius: 1rem;
           padding: 10px;
       }
+      textarea {width: 100%;}
       /* form button {
           border-radius: 25px;
           width: 100px;
@@ -71,7 +72,7 @@ function currentExperience() {
 </script>
 
   <body>
-    <div class="container-flauid p-5 text-center">
+    <div class="container-flauid p-5 text-center col-xs-12">
       <button class="btn btn-primary" onclick="goBack()" style="position: relative;">Go Back</button>
 
         <!-- <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
@@ -116,7 +117,7 @@ function currentExperience() {
                         <th scope="col">Experiencee</th>
                         <th scope="col">Phone</th>
                         <th scope="col">availability</th>
-                        <th scope="col"> </th>
+                        <!-- <th scope="col"> </th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -125,9 +126,9 @@ function currentExperience() {
                         <td><%=worker.DateOfHiring%></td>
                         <td><%=worker.phone%></td>
                         <td><%=worker.acc%></td>
-                        <td>
+                        <!-- <td>
                             <button class="btn">feedback</button>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
           </table>
