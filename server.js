@@ -227,7 +227,7 @@ var from = req.body.email;
           console.log('Email sent: ' + info.response);
         }
 });
-      res.redirect("/Register");
+      res.redirect("/signin");
 
   }
 
