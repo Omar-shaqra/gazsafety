@@ -260,7 +260,7 @@ const fire = parseInt(req.params.fire);
 var val = " ";
   const value = await new Value({
   id : id,
-  value : values+ " "
+  value : values+ " " + fire
 });
 await value.save();
 
