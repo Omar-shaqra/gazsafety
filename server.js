@@ -482,7 +482,7 @@ res.send(id + val);
 
 
 })
-
+/*
 app.route('/embadeds/:id/:val').get((req,res)=>{
   const id =req.params.id;
   const values =parseInt(req.params.val);
@@ -497,7 +497,7 @@ await value.save();
 
 
 })
-
+*/
 app.get('/dashboard/:id',async (req,res)=>{
   const id =req.params.id;
 console.log(id + ' is here');
