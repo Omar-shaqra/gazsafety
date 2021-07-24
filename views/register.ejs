@@ -79,7 +79,7 @@
                 <h1> Sign Up</h1>
             </div>
             <div class="modal-body">
-                <form method="POST">
+                <form method="POST" name="myForm" onsubmit="return validateForm()">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Name:" required><br>
                     </div>
@@ -95,7 +95,7 @@
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password:" required><br>
                     </div>
-                    <input type="submit" name="" value="SUBMIT " id="sub" class="btn btn-outline-primary" onclick="alertFunc()">
+                    <input type="submit" name="" value="SUBMIT " id="sub" class="btn btn-outline-primary" >
                 </form>
             </div>
         </div>
@@ -114,8 +114,19 @@
             </footer>
         <!--End footer-->
         <script>
-            function alertFunc() {
-                alert('Check Your Gmail For Sign In Id')
+            // function alertFunc() {
+            //     alert('Check Your Gmail For Sign In Id')
+            // }
+            function validateForm() {
+                let fName = document.forms["myForm"]["name"].value;
+                let firstChar = fName.charAt(0);
+                    if (!(/[a-zA-Z]/).test(firstChar)) {
+                        alert("Name must Start with Character");
+                        return false;
+                    }
+                    else {
+                        alert('Check Your Gmail For Sign In Id')
+                    }
             }
         </script>
     </body>
