@@ -252,15 +252,15 @@ app.post("/signin",async function(req,res){
 });
 
 
-app.get('/embaded/:id/:value/:fire',async(req,res,next)=>{
+app.get('/embaded/:id/:value',async(req,res,next)=>{
   const id =req.params.id;
   const values =parseInt(req.params.value);
-  const fire = parseInt(req.params.fire);
+//const fire = parseInt(req.params.fire);
 
 var val = " ";
   const value = await new Value({
   id : id,
-  value : values+ " " + fire
+  value : values+ " "
 });
 await value.save();
 
@@ -272,7 +272,7 @@ if(values>= 500){
 }
 
   if (val == "true"){
-    if ( fire >= 200){
+  /*  if ( fire >= 200){
 
 
 
@@ -377,7 +377,7 @@ if(values>= 500){
     }else{
 
 
-
+*/
 
     try {
       const worker = await Worker.find({acc:'1'}).sort([['DateOfHiring',-1]])
@@ -476,7 +476,7 @@ if(values>= 500){
     }
 
  }
-}
+
 
 res.send(id + val);
 
