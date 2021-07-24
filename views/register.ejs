@@ -76,6 +76,7 @@
         <!--Start Main page-->
         <div class="modal-content container text-center">
             <div class="title modal-header">
+                <h1 style="color: red ; text-align: center;" ><%=err2%></h1>
                 <h1> Sign Up</h1>
             </div>
             <div class="modal-body">
@@ -125,17 +126,25 @@
                 if (!(/[a-zA-Z]/).test(firstChar)) {
                     alert("Wrong Input\nName must Start with Character");
                     return false;
-                } 
+                }
                 //validate password
                 if (pass.toString().length < 8) {
                     alert("Wrong Input\nPassword Must Be At Least 8 Digits");
                     return false;
                 }
+<<<<<<< HEAD
                 // else {
                 //     alert('Success\nCheck Your Gmail For Sign In Id')
                 // }
                 
                 
+=======
+                else {
+                    alert('Success\nCheck Your Gmail For Sign In Id')
+                }
+
+
+>>>>>>> d2d7aa243b9f8eaa1cc6197883424c62c183f725
             }
         </script>
     </body>
