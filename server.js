@@ -388,7 +388,7 @@ if(values>= 500){
 
           }
 
-       }
+
 
     }else{
 
@@ -492,7 +492,7 @@ if(values>= 500){
     }
 
  }
-
+}
 
 res.send(id + val);
 
