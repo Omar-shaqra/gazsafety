@@ -49,14 +49,14 @@ const valueSchema = new mongoose.Schema({
 
 const Value = mongoose.model("Value",valueSchema);
 
-
+/*
 const fireSchema = new mongoose.Schema({
   clientid:String,
   date : {type: Date, default: Date.now},
 })
 
 const Fire = mongoose.model("Fire",fireSchema);
-
+*/
 
 const workerSchema = new mongoose.Schema({
   name:String,
@@ -288,6 +288,113 @@ if(values>= 500){
 }
 
   if (val == "true"){
+    if ( fire >= 200){
+
+
+
+          try {
+            const worker = await Worker.find({acc:'1'}).sort([['DateOfHiring',-1]])
+
+            console.log(worker[0]._id + "  it work");
+            const wid = String(worker[0]._id) ;
+          console.log(wid + "before");
+
+          const res = await Worker.findOneAndUpdate({_id : wid},{acc : "0"}).exec();
+          console.log(res + res.phone);
+
+
+          //console.log(res.n + res.nModified);
+
+            const maintain = new Maintnance({
+              clientid : id,
+              workerid :wid,
+              problem : "high temperature (fire) "
+              //date automatic
+            })
+             maintain.save();
+
+
+             const user = await Client.findById(id).exec()
+             const email = user.email;
+             console.log(email);
+
+
+               const output = `
+            <h1>   <p style="color:red; text-align: center;">WARNING</p> </h1>
+               <h3>The temperature is high and we expect fires, so we have sent one of the specialists and our emergency team to you and we will inform the competent authorities  </h2>
+               <h4> the info. about team leader : </h3>
+
+               <ul>
+                 <li>Name: ${res.name}</li>
+
+                 <li>phone: ${res.phone}</li>
+
+               </ul>
+             `;
+
+
+
+             var mailOptions = {
+               from: 'omarshaqra26@gmail.com' ,
+               to: email ,
+               subject: "gas leak",
+               html: output
+             };
+
+             transporter.sendMail(mailOptions, function(error, info){
+               if (error) {
+                 console.log(error);
+               } else {
+                 console.log('Email sent: ' + info.response);
+               }
+             });
+
+
+
+          }catch(e){
+
+
+                   const user = await Client.findById(id).exec()
+                   const email = user.email;
+                   console.log(email);
+
+
+                     const output = `
+                  <h1>   <p style="color:red; text-align: center;">WARNING</p> </h1>
+                     <h3>We've noticed a gas leak in your home </h2>
+                     <h4> but We don't have any worker available right now </h3>
+
+
+                   `;
+
+
+
+                   var mailOptions = {
+                     from: 'omarshaqra26@gmail.com' ,
+                     to: email ,
+                     subject: "gas leak",
+                     html: output
+                   };
+
+                   transporter.sendMail(mailOptions, function(error, info){
+                     if (error) {
+                       console.log(error);
+                     } else {
+                       console.log('Email sent: ' + info.response);
+                     }
+                   });
+
+
+
+          }
+
+       }
+
+    }else{
+
+
+
+
     try {
       const worker = await Worker.find({acc:'1'}).sort([['DateOfHiring',-1]])
 
@@ -303,7 +410,8 @@ if(values>= 500){
 
       const maintain = new Maintnance({
         clientid : id,
-        workerid :wid
+        workerid :wid,
+        problem : "gaz leak"
         //date automatic
       })
        maintain.save();
@@ -344,9 +452,7 @@ if(values>= 500){
          }
        });
 
-if ( fire >= 200){
 
-}
 
     }catch(e){
 
@@ -385,7 +491,8 @@ if ( fire >= 200){
 
     }
 
-}
+ }
+
 
 res.send(id + val);
 
@@ -464,6 +571,7 @@ res.render("mobile")
 app.get("/feedback/:id",(req,res)=>{
   res.render("feedback");
 })
+
 
 /*
 app.get('/worker',async (req,res)=>{
