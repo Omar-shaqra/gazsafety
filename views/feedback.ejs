@@ -64,77 +64,16 @@
 function goBack() {
 window.history.back();
 }
-// function currentExperience() {
-//   var currentYear = new Date().getFullYear();
-//   var hiringYear = worker.DateOfHiring.getFullYear();
-//   var experience = currentYear - hiringYear;
-//   document.getElementById('worker-experience').innerHTML = experience;
-// }
 </script>
 
   <body>
-    <div class="container-flauid p-5 text-center col-xs-12">
+    <div class="container-flauid p-5 text-center">
       <button class="btn btn-primary" onclick="goBack()" style="position: relative;">Go Back</button>
 
-        <!-- <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
-
-
-
-            <thead>
-              <tr>
-                <th scope="col">name </th>
-                <th scope="col">DateOfHiring</th>
-                <th scope="col">Phone</th>
-                <th scope="col">availability</th>
-                    <th scope="col"> </th>
-
-              </tr>
-            </thead>
-            <tbody>
-
-
-
-              <tr>
-                <td><%=worker.name%> </td>
-                <td><%=worker.DateOfHiring%></td>
-                <td>
-                  <%=worker.phone%>
-                </td>
-                <td><%=worker.acc%></td>
-
-
-              </tr>
-            </tbody>
-
-          </table> -->
-
-          <!-- Start Table -->
+        
 
           <h2>Maintainance <span class="decorated">Feedback</span> </h2>
-          <!-- <table id='tbl_exporttable_to_xls' class="table text-center" style="width: 100%; margin-bottom: 30px;">
-                <thead style="height: 38px; font-size: 18px;">
-                    <tr>
-                        <th scope="col">name </th>
-                        <th scope="col">Experiencee</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">availability</th>
-                        <!-- <th scope="col"> </th> ->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr >
-                        <th scope="row"><%=worker.name%></th>
-                        <td><%=worker.DateOfHiring%></td>
-                        <td><%=worker.phone%></td>
-                        <td><%=worker.acc%></td>
-                        <!-- <td>
-                            <button class="btn">feedback</button>
-                        </td> ->
-                    </tr>
-                </tbody>
-          </table> -->
-
-          <!-- End Table -->
+          
 
           <form class="text-center" method="post">
             <input type="hidden" name="id" value="worker._id">
