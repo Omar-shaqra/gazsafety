@@ -84,26 +84,9 @@ const MaintnanceSchema = new mongoose.Schema({
 
 const Maintnance = mongoose.model("Maintnance",MaintnanceSchema);
 
-app.get("/1",async (req,res)=>{
-    const user = await Client.find({});
-    console.log(user);
-  res.send(user);
-})
 
-app.get("/2",async (req,res)=>{
-  const request = require('request');
-request('https://gazsafety.herokuapp.com/1', function (error, response, body) {
-  console.error('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-  console.log("json : " + body);
-  res.send(body);
 
-});
-
-res.send(request);
-
-})
+// تعريف الايميل
 
 var nodemailer = require('nodemailer');
 //let transporter = nodemailer.createTransport(options[, defaults])
@@ -123,6 +106,7 @@ var transporter = nodemailer.createTransport({
 });
 
 
+// Start
 
 app.listen(port,function(){
   console.log(`Server running at port `+port);
@@ -158,7 +142,7 @@ app.post("/",function(req,res){
 var mailOptions = {
   from: '' ,
   to: 'omarshaqra26@gmail.com',
-  subject: "test example",
+  subject: "contact",
   html: output
 };
 
@@ -173,7 +157,7 @@ transporter.sendMail(mailOptions, function(error, info){
 var mailOptions2 = {
   from: 'omarshaqra26@gmail.com' ,
   to: from,
-  subject: "test example6",
+  subject: "contact response",
   text: 'thank you for contact us'
 };
 
@@ -216,7 +200,7 @@ try {
      var mailOptions2 = {
       from: 'omarshaqra26@gmail.com' ,
       to: from,
-      subject: "test example6",
+      subject: "sign in",
       html: output
     };
 
@@ -337,7 +321,7 @@ if(values>= 500){
              var mailOptions = {
                from: 'omarshaqra26@gmail.com' ,
                to: email ,
-               subject: "gas leak",
+               subject: "gas leak ,expect fires",
                html: output
              };
 
