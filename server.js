@@ -251,24 +251,46 @@ app.post("/signin",async function(req,res){
 
   console.log(name + pass);
   try {
+      try {
+          const user2 = await Client.findOne({email : name}).exec();
+            console.log(user2);
+                console.log(user2.password);
+                console.log(user2._id);
+                  if (pass == user2.password){
+                  res.redirect(`/dashboard/${user2._id}`);
+                }else{
+                  throw new Error('#!@$');
+                }
 
-    const user = await Client.findById(name).exec()
-    console.log(user);
+      } catch (e) {
 
-  await console.log(user.password);
-  if(pass == user.password){
+
+    const user1 = await Client.findById(name).exec()
+
+    console.log(user1);
+
+
+
+
+
+
+  await console.log(user1.password);
+  if(pass == user1.password){
     res.redirect(`/dashboard/${name}`);
   }else{
     err = 'error'
     res.redirect("signin");
 
   }
-} catch (e) {
+
+}} catch (e) {
     err = 'error'
+    console.log("ctch");
     res.redirect("signin");
   }
 
 });
+
 
 
 app.get('/embaded/:id/:value/:fire',async(req,res,next)=>{
