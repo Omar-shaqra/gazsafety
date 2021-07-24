@@ -29,6 +29,19 @@
           background-color: var(--main-color) !important;
           color:#fff
       }
+      /* form */
+      .form-group {
+          margin: 0 30px 30px;
+      }
+      form input, 
+      form textarea {
+          border: 1px solid var(--main-color);
+          border-radius: 3rem;
+      }
+      form button {
+          border-radius: 25px;
+          width: 85%
+      }
     </style>
   </head>
 <script type="text/javascript">
@@ -109,8 +122,16 @@ function currentExperience() {
 
           <form  method="post">
             <input type="hidden" name="id" value="worker._id">
-            <input type="text" placeholder="rate:" name="rate" value="">
-            <textarea name="note" placeholder="any comment about the worker will help :" rows="8" cols="80"></textarea>
+            <div class="form-group">
+              <label for="rate">Rate:</label>
+              <!-- Start Rate -->
+                
+              <!-- End Rate -->
+              <input type="text" placeholder="rate:" name="rate" value="">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="note" placeholder="any comment about the worker will help :" required rows="8" cols="80"></textarea>
+            </div>
             <button type="submit" name="button">submit</button>
           </form>
     </div>
