@@ -64,12 +64,6 @@
 function goBack() {
 window.history.back();
 }
-function currentExperience() {
-  var currentYear = new Date().getFullYear();
-  var hiringYear = worker.DateOfHiring.getFullYear();
-  var experience = currentYear - hiringYear;
-  document.getElementById('worker-experience').innerHTML = experience;
-}
 </script>
 
   <body>
@@ -81,7 +75,7 @@ function currentExperience() {
                 <thead style="height: 38px; font-size: 18px;">
                     <tr>
                         <th scope="col">name </th>
-                        <th scope="col">Experiencee</th>
+                        <th scope="col">Date Of Hiring</th>
                         <th scope="col">Phone</th>
                         <th scope="col">availability</th>
                         <!-- <th scope="col"> </th> -->
