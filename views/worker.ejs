@@ -21,6 +21,9 @@
           color: #fff;
           font-size: 16px;
       }
+      tbody {
+        text-align: center;
+      }
       .btn { 
           border: 2px solid var(--main-color) !important;
           border-radius:20px;
@@ -36,16 +39,25 @@
       .form-group {
           margin: 0 30px 30px;
       }
+      .form-check {
+        display: inline;
+        margin: 0 10px;
+      }
       form input, 
       form textarea {
           border: 1px solid var(--main-color);
           border-radius: 1rem;
           padding: 10px;
       }
-      form button {
+      textarea {width: 100%;}
+      textarea:focus {border: none}
+      /* form button {
           border-radius: 25px;
-          width: 35%
-      }
+          width: 100px;
+          height: 25px;
+          cursor: pointer;
+          background: var(--main-color);
+      } */
     </style>
   </head>
 <script type="text/javascript">
@@ -61,7 +73,7 @@ function currentExperience() {
 </script>
 
   <body>
-    <div class="container-flauid p-5 text-center">
+    <div class="container-flauid p-5 text-center col-xs-12">
       <button class="btn btn-primary" onclick="goBack()" style="position: relative;">Go Back</button>
 
         <!-- <table  border="1" cellpadding="3" id='tbl_exporttable_to_xls'  class="table">
@@ -106,7 +118,7 @@ function currentExperience() {
                         <th scope="col">Experiencee</th>
                         <th scope="col">Phone</th>
                         <th scope="col">availability</th>
-                        <th scope="col"> </th>
+                        <!-- <th scope="col"> </th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -115,9 +127,9 @@ function currentExperience() {
                         <td><%=worker.DateOfHiring%></td>
                         <td><%=worker.phone%></td>
                         <td><%=worker.acc%></td>
-                        <td>
+                        <!-- <td>
                             <button class="btn">feedback</button>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
           </table>
@@ -141,31 +153,26 @@ function currentExperience() {
                   bad
                 </label>
               </div>
-              <div class="form-check disabled">
+              <div class="form-check ">
                 <input class="form-check-input" type="radio" name="rate" id="exampleRadios3" value="option3" >
                 <label class="form-check-label" for="exampleRadios3">
                   good
                 </label>
               </div>
-              <div class="form-check disabled">
+              <div class="form-check ">
                 <input class="form-check-input" type="radio" name="rate" id="exampleRadios4" value="option4" >
-                <label class="form-check-label" for="exampleRadios3">
+                <label class="form-check-label" for="exampleRadios4">
                   very good
                 </label>
               </div>
-              <div class="form-check disabled">
-                <input class="form-check-input" type="radio" name="rate" id="exampleRadios5" value="option5" >
-                <label class="form-check-label" for="exampleRadios3"
-                  excelent
-                </label>
-              </div>
+              
               <!-- End Rate -->
               <!-- <input type="text" placeholder="rate:" name="rate" value=""> -->
             </div>
             <div class="form-group">
               <textarea class="form-control" name="note" placeholder="any comment about the worker will help :" required rows="8" cols="80"></textarea>
             </div>
-            <button type="submit" name="button">submit</button>
+            <button type="submit" name="button" class="btn">submit</button>
           </form>
     </div>
 
