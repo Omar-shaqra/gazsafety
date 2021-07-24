@@ -172,47 +172,66 @@ transporter.sendMail(mailOptions2, function(error, info){
 });
 
 
+  var err2 = " ";
 app.get("/Register",function(req,res){
-
-  res.render("register");
+    var from = req.body.email;
+  res.render("register",{err2:err2});
+  err2 = " ";
 });
 
 try {
+
   app.post("/Register",async function(req,res){
+var from = req.body.email;
 
-    var from = req.body.email;
-        const client = new Client({
-           name : req.body.name,
-           email : req.body.email,
-           phone : req.body.phone,
-           address : req.body.address,
-           password : req.body.password
-        });
-    await  client.save();
+  const user = await Client.findOne({email : from}).exec();
+  console.log(user);
+  if (user != null){
+    err2 = " this email has been inserted before , please use another email"
+  res.redirect("/Register")
+  }else{
 
-    await console.log(client._id);
 
-   const output = `
-      <p>thank you for register yuor id is :</p>
 
-        <li>id ${client._id}</li>`;
 
-     var mailOptions2 = {
-      from: 'omarshaqra26@gmail.com' ,
-      to: from,
-      subject: "sign in",
-      html: output
-    };
 
-  await  transporter.sendMail(mailOptions2, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
 
-    res.redirect("/Register");
-  });
+
+          const client = new Client({
+             name : req.body.name,
+             email : req.body.email,
+             phone : req.body.phone,
+             address : req.body.address,
+             password : req.body.password
+          });
+      await  client.save();
+
+      await console.log(client._id);
+
+     const output = `
+        <p>thank you for register yuor id is :</p>
+
+          <li>id ${client._id}</li>`;
+
+       var mailOptions2 = {
+        from: 'omarshaqra26@gmail.com' ,
+        to: from,
+        subject: "sign in",
+        html: output
+      };
+
+    await  transporter.sendMail(mailOptions2, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+});
+      res.redirect("/signin");
+
+  }
+
+
 });
 } catch (e) {
   console.log(e);
@@ -232,24 +251,46 @@ app.post("/signin",async function(req,res){
 
   console.log(name + pass);
   try {
+      try {
+          const user2 = await Client.findOne({email : name}).exec();
+            console.log(user2);
+                console.log(user2.password);
+                console.log(user2._id);
+                  if (pass == user2.password){
+                  res.redirect(`/dashboard/${user2._id}`);
+                }else{
+                  throw new Error('#!@$');
+                }
 
-    const user = await Client.findById(name).exec()
-    console.log(user);
+      } catch (e) {
 
-  await console.log(user.password);
-  if(pass == user.password){
+
+    const user1 = await Client.findById(name).exec()
+
+    console.log(user1);
+
+
+
+
+
+
+  await console.log(user1.password);
+  if(pass == user1.password){
     res.redirect(`/dashboard/${name}`);
   }else{
     err = 'error'
     res.redirect("signin");
 
   }
-} catch (e) {
+
+}} catch (e) {
     err = 'error'
+    console.log("ctch");
     res.redirect("signin");
   }
 
 });
+
 
 
 app.get('/embaded/:id/:value/:fire',async(req,res,next)=>{
@@ -572,6 +613,27 @@ app.get("/feedback/:id",(req,res)=>{
   res.render("feedback");
 })
 
+
+app.post("/feedback/:id",async (req,res)=>{
+  const id = req.params.id;
+
+var rate = req.body.rate;
+  var note = req.body.note;
+
+
+
+
+
+const maintnance  = await Maintnance.findOneAndUpdate({_id : id},{feedback : {
+  rate : rate,
+  notes : note
+}}).exec();
+
+await  maintnance.save();
+
+
+  res.render("feedback");
+})
 
 app.get("/service",(req,res)=>{
 
