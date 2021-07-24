@@ -504,6 +504,8 @@ console.log(id + ' is here');
 
 let statue = 0;
 
+const user = await Client.findOne({_id : id}).exec();
+
   const val = await Value.findOne({id : id},{value : true}).exec();
 console.log(val);
 
@@ -517,7 +519,7 @@ const maintnance = await Maintnance.find({clientid : id}).exec();
 //console.log(worker[0].name);
 
 
-res.render("dashboard",{maintnance:maintnance , statue:statue })
+res.render("dashboard",{maintnance:maintnance , statue:statue , user:user })
 })
 
 app.get('/worker/:id',async (req,res)=>{
