@@ -120,13 +120,22 @@
             function validateForm() {
                 let fName = document.forms["myForm"]["name"].value;
                 let firstChar = fName.charAt(0);
-                    if (!(/[a-zA-Z]/).test(firstChar)) {
-                        alert("Name must Start with Character");
-                        return false;
-                    }
-                    else {
-                        alert('Check Your Gmail For Sign In Id')
-                    }
+                let pass =document.forms["myForm"]["password"].value;
+                // validate name
+                if (!(/[a-zA-Z]/).test(firstChar)) {
+                    alert("Wrong Input\nName must Start with Character");
+                    return false;
+                } 
+                //validate password
+                if (pass.toString().length < 8) {
+                    alert("Wrong Input\nPassword Must Be At Least 8 Digits");
+                    return false;
+                }
+                else {
+                    alert('Success\nCheck Your Gmail For Sign In Id')
+                }
+                
+                
             }
         </script>
     </body>
