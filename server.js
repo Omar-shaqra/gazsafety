@@ -260,7 +260,7 @@ app.get('/embaded/:id/:value/:fire',async(req,res,next)=>{
 var val = " ";
   const value = await new Value({
   id : id,
-  value : val
+  value : values + fire
 });
 await value.save();
 
