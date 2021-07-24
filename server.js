@@ -483,6 +483,20 @@ res.send(id + val);
 
 })
 
+app.route('/embadeds/:id/:val').get((req,res)=>{
+  const id =req.params.id;
+  const values =parseInt(req.params.val);
+//const fire = parseInt(req.params.fire);
+
+var val = " ";
+  const value = await new Value({
+  id : id,
+  value : values+ " "
+});
+await value.save();
+
+
+})
 
 app.get('/dashboard/:id',async (req,res)=>{
   const id =req.params.id;
