@@ -57,7 +57,7 @@
 /*end header*/
 
 
-#ourDiv
+.ourDiv
 {
     background-color: gainsboro;
 }
@@ -127,12 +127,6 @@ h3{
     margin: 15px;
     text-align: center;
 }
-
-.ourDiv
-{
-    background-color: rgb(199, 198, 212);
-}
-
 .two
 {
     color: rgb(0, 0, 0);
@@ -156,7 +150,7 @@ h3{
   justify-content: space-between;
 }
 .wrapper .box{
-  background: rgb(219, 216, 216);
+  background: gainsboro;
   width: calc(33% - 10px);
   padding: 25px;
   border-radius: 3px;
