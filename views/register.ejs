@@ -122,21 +122,27 @@
                 let fName = document.forms["myForm"]["name"].value;
                 let firstChar = fName.charAt(0);
                 let pass =document.forms["myForm"]["password"].value;
+                let phone =document.forms["myForm"]["phone"].value;
                 // validate name
                 if (!(/[a-zA-Z]/).test(firstChar)) {
                     alert("Wrong Input\nName must Start with Character");
                     return false;
-                }
+                } 
                 //validate password
                 if (pass.toString().length < 8) {
                     alert("Wrong Input\nPassword Must Be At Least 8 Digits");
                     return false;
                 }
-                else {
-                    alert('Success\nCheck Your Gmail For Sign In Id')
+                //validate Phone
+                if (phone.toString().length < 11) {
+                    alert("Wrong Input\nphone Must Be 11 Numbers");
+                    return false;
                 }
-
-
+                // else {
+                //     alert('Success\nCheck Your Gmail For Sign In Id')
+                // }
+                
+                
             }
         </script>
     </body>
