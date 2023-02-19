@@ -190,13 +190,6 @@ var from = req.body.email;
     err2 = " this email has been inserted before , please use another email"
   res.redirect("/Register")
   }else{
-
-
-
-
-
-
-
           const client = new Client({
              name : req.body.name,
              email : req.body.email,
@@ -263,16 +256,9 @@ app.post("/signin",async function(req,res){
                 }
 
       } catch (e) {
-
-
     const user1 = await Client.findById(name).exec()
 
     console.log(user1);
-
-
-
-
-
 
   await console.log(user1.password);
   if(pass == user1.password){
@@ -619,9 +605,6 @@ app.post("/feedback/:id",async (req,res)=>{
 
 var rate = req.body.rate;
   var note = req.body.note;
-
-
-
 
 
 const maintnance  = await Maintnance.findOneAndUpdate({_id : id},{feedback : {
